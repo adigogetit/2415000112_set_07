@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+    <main class="container">
+        <div class="page-actions">
+            <h1>Scholarships</h1>
+            <a class="button" href="/scholarship/new">New Scholarship</a>
+        </div>
+        <% if (scholarships.length===0) { %>
+            <p class="empty-state">No scholarships found. Create one to get started.</p>
+            <% } else { %>
+                <div class="card-grid">
+                    <% scholarships.forEach((scholarship)=> { %>
+                        <article class="card">
+                            <h2>
+                                <%= scholarship.scholarshipHolder %>
+                            </h2>
+                            <p><strong>Course:</strong>
+                                <%= scholarship.courseEnrolled.courseName %>
+                            </p>
+                            <p><strong>Percentage:</strong>
+                                <%= scholarship.percentage %>%
+                            </p>
+                            <a href="/scholarship/<%= scholarship._id %>">View details</a>
+                        </article>
+                        <% }); %>
+                </div>
+                <% } %>
+    </main>
+    <%- include('../partials/footer') %>

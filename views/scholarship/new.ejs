@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+    <main class="form-page">
+        <h1>New Scholarship</h1>
+        <form action="/scholarship" method="POST">
+            <label>Scholarship Holder</label>
+            <input type="text" name="scholarshipHolder" required />
+            <label>Age</label>
+            <input type="number" name="age" min="1" required />
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" required />
+            <label>Course Enrolled</label>
+            <input type="text" name="courseName" required />
+            <label>Percentage</label>
+            <input type="number" name="percentage" min="0" max="100" required />
+            <button type="submit">Create Scholarship</button>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>

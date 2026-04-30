@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+    <main class="details-page">
+        <h1>
+            <%= scholarship.scholarshipHolder %>
+        </h1>
+        <div class="details-grid">
+            <div>
+                <p><strong>Age:</strong>
+                    <%= scholarship.age %>
+                </p>
+                <p><strong>Phone Number:</strong>
+                    <%= scholarship.phoneNumber %>
+                </p>
+                <p><strong>Course Enrolled:</strong>
+                    <%= scholarship.courseEnrolled.courseName %>
+                </p>
+                <p><strong>Percentage:</strong>
+                    <%= scholarship.percentage %>%
+                </p>
+            </div>
+            <div>
+                <p><strong>Created:</strong>
+                    <%= scholarship.createdAt.toLocaleString() %>
+                </p>
+                <p><strong>Updated:</strong>
+                    <%= scholarship.updatedAt.toLocaleString() %>
+                </p>
+            </div>
+        </div>
+        <div class="page-actions">
+            <a class="button secondary" href="/scholarship/<%= scholarship._id %>/edit">Edit</a>
+            <a class="button" href="/scholarship">Back to list</a>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>

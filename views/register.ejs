@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+    <main class="form-page">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <label>Name</label>
+            <input type="text" name="name" required />
+
+            <label>Email</label>
+            <input type="email" name="email" required />
+
+            <label>Password</label>
+            <input type="password" name="confirmPassword" required />
+
+            <label>Age</label>
+            <input type="number" name="age" min="1" required />
+
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" required />
+
+            <label>Course Enrolled</label>
+            <input type="text" name="courseName" required />
+            
+            <button type="submit">Register</button>
+        </form>
+    </main>
+    <%- include('partials/footer') %>

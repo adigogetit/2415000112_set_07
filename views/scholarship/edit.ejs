@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+    <main class="form-page">
+        <h1>Edit Scholarship</h1>
+        <form action="/scholarship/<%= scholarship._id %>?_method=PUT" method="POST">
+            <label>Scholarship Holder</label>
+            <input type="text" name="scholarshipHolder" value="<%= scholarship.scholarshipHolder %>" disabled />
+            <label>Age</label>
+            <input type="number" name="age" value="<%= scholarship.age %>" min="1" required />
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" value="<%= scholarship.phoneNumber %>" required />
+            <label>Course Enrolled</label>
+            <input type="text" name="courseName" value="<%= scholarship.courseEnrolled.courseName %>" required />
+            <label>Percentage</label>
+            <input type="number" name="percentage" value="<%= scholarship.percentage %>" min="0" max="100" required />
+            <button type="submit">Save Changes</button>
+        </form>
+        <a class="button secondary" href="/scholarship/<%= scholarship._id %>">Cancel</a>
+    </main>
+    <%- include('../partials/footer') %>
